@@ -1,0 +1,47 @@
+/**
+ * EMBER PAPER VARIABLES
+ * https://miguelcobain.github.io/ember-paper/#/theme
+ */
+$primary: 'blue';
+$warn: 'amber';
+$accent: 'pink';
+
+@import 'ember-paper';
+@import "ember-paper-link";
+@import "components/sidebar";
+@import "components/page-toolbar";
+
+/**
+ *
+ * https://github.com/miguelcobain/ember-paper/blob/da3987fa005bda7b6b676af7e472e8ce73fd4b7d/tests/dummy/app/styles/app.scss
+ */
+
+body {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body.ember-application {
+  flex-direction: row;
+  flex: 1;
+  display: flex;
+}
+
+body > div.ember-view {
+  flex-direction: row;
+  flex: 1;
+  display: flex;
+}
+
+// Full Page
+ .site-nav-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inner-sidenav {
+  position: relative;
+}

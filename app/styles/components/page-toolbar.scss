@@ -1,0 +1,14 @@
+// https://github.com/miguelcobain/ember-paper/blob/da3987fa005bda7b6b676af7e472e8ce73fd4b7d/tests/dummy/app/styles/demo.scss
+
+/**
+ * PAGE TOOLBAR
+ */
+md-toolbar.md-default-theme.page-main-toolbar {
+  background-color: paper-color('grey', '100');
+  color: $dark-contrast-color;
+
+  md-icon, .md-button md-icon {
+    color: $dark-contrast-color;
+    margin-top: -2px;
+  }
+}
