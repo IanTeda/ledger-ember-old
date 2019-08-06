@@ -1,12 +1,12 @@
 {{!-- https://github.com/miguelcobain/ember-paper/blob/master/tests/dummy/app/templates/components/page-toolbar.hbs --}}
-{{#paper-toolbar class="md-whiteframe-1dp page-main-toolbar" as |toolbar|}}
+{{#paper-toolbar class="md-whiteframe-1dp page-main-toolbar"}}
   {{#paper-toolbar-tools}}
     {{#paper-sidenav-toggle name="left" as |toggleAction|}}
       {{#paper-button iconButton=true classNames="hide-gt-sm" onClick=(action toggleAction)}}
         {{paper-icon "menu"}}
       {{/paper-button}}
     {{/paper-sidenav-toggle}}
-    <h2>
+    <h2 class="page-toolbar-title">
       {{pageTitle}}
     </h2>
     <span class="flex"></span>
