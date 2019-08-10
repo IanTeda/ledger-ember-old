@@ -1,0 +1,7 @@
+{{#paper-list}}
+
+  {{#each this.model as |payee|}}
+    <PayeeListItem @payee={{payee}} />
+  {{/each}}
+
+{{/paper-list}}

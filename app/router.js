@@ -14,6 +14,9 @@ Router.map(function() {
   this.route('reports');
   this.route('settings');
   this.route('budgets');
+  this.route('payees', function() { //Index route
+    this.route('payee', { path: '/:payee_id' }); // Single payee route
+  });
 });
 
 export default Router;

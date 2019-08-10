@@ -3,17 +3,7 @@
 {{#paper-content scroll-y=true class="layout-padding flex"}}
   <div class="doc-content">
 
-    {{!-- https://github.com/ibarrick/paper-data-table --}}
-
-    {{#paper-list}}
-
-      {{#each this.model as |payee|}}
-        <PayeeListItem @payee={{payee}} />
-      {{/each}}
-
-    {{/paper-list}}
-
-
+    {{outlet}}
 
   </div>
 {{/paper-content}}
