@@ -1,0 +1,58 @@
+{{page-toolbar pageTitle=this.model.name}}
+
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div id="payee" class="doc-content layout-row layout-xs-column layout-align-center">
+    <div class="layout-column flex-xs flex-gt-sm-70">
+
+      {{#paper-card as |card|}}
+
+        {{card.image src=this.model.image alt=this.model.name title=this.model.name}}
+
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}Payee {{this.model.number}}{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+        {{#card.content}}
+
+          <div class="layout-column flex">
+            {{paper-input class="flex-100" type="text" label="Payee Name" placeholder="Enter Payee Name" value=this.model.name onChange=(action (mut this.model.name)) }}
+
+            {{paper-input class="flex-100" type="text" label="Payee Image" placeholder="Enter Payee Image" value=this.model.image onChange=(action (mut this.model.image)) }}
+
+            {{paper-input class="flex-100" type="text" label="Payee Website" placeholder="Enter Payee Website" value=this.model.website onChange=(action (mut this.model.website))}}
+
+            {{paper-input class="flex-100" textarea=true label="Payee Description" placeholder="Enter Payee Description" value=this.model.description onChange=(action (mut this.model.description)) block=true maxlength=300 passThru=(hash rows=7 maxRows=7)}}
+          </div>
+
+        {{/card.content}}
+        {{#card.actions}}
+          {{#paper-button raised=true primary=true onClick=(action "updatePayee")}}UPDATE{{/paper-button}}
+        {{/card.actions}}
+
+      {{/paper-card}}
+
+      {{#paper-card as |card|}}
+
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}Key Statistics{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+        {{#card.content}}
+
+          <div class="layout-column flex">
+            <div class="flex-100">
+              <b>Total Spend:</b> {{this.model.spend}}
+            </div>
+            <div class="flex-100">
+              <b>Transactions:</b> {{this.model.transactions}}
+            </div>
+          </div>
+
+        {{/card.content}}
+      {{/paper-card}}
+
+    </div>
+  </div>
+{{/paper-content}}

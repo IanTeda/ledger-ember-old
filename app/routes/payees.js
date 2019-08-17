@@ -3,7 +3,8 @@ import Route from '@ember/routing/route';
 export default Route.extend({
   /**
    * Refer:
-   *   ./payee/index.js > index route
-   *   ./payee/payee.js > single entry route
+   *   ./payees/index.js > index route
+   *   ./payees/show.js > single entry route
+   *   ./payees/create.js > create route
    */
 });

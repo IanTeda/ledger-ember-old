@@ -1,7 +1,17 @@
-{{#paper-list}}
+{{page-toolbar pageTitle="PAYEES" createRoute="payees/create"}}
 
-  {{#each this.model as |payee|}}
-    <PayeeListItem @payee={{payee}} />
-  {{/each}}
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div class="doc-content">
 
-{{/paper-list}}
+    {{#paper-list}}
+
+      {{#each this.model as |payee|}}
+        <LinkTo @route="payees.show" @model={{payee}}>
+          <h4>{{payee.name}}</h4>
+        </LinkTo>
+      {{/each}}
+
+    {{/paper-list}}
+
+  </div>
+{{/paper-content}}

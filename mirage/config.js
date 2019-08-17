@@ -11,11 +11,15 @@ export default function() {
   /**
    * PAYEES ENDPOINTS
    * Using factory schema to generate development/test data with faker
+   * Mirage resource shortcut https://www.ember-cli-mirage.com/docs/route-handlers/shorthands
+   * 
+   * Action   |  Shorthand
+   * ------------------------------
+   * index    | this.get('/payees')
+   * show     | this.get('/payees/:id')
+   * create   | this.post('/payees')
+   * update   | this.patch('payees/:id') (or this.put)
+   * delete   | this.del('/payees/:id')
    */
-  this.get('/payees');
-  this.get('/payees/:id');
-  this.post('/payees');
-  this.patch('/payees/:id');
-  this.del('/payees/:id');
-
+  this.resource('payees');
 }

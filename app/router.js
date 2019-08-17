@@ -14,9 +14,14 @@ Router.map(function() {
   this.route('reports');
   this.route('settings');
   this.route('budgets');
-  this.route('payees', function() { //Index route
-    this.route('payee', { path: '/:payee_id' }); // Single payee route
+  this.route('payees', function() {
+    // Show a Payee
+    this.route('show', { path: '/:payee_id' });
+    // Create a Payee
+    this.route('create');
   });
+
+
 });
 
 export default Router;

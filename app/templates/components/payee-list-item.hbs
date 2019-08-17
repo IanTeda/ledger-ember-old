@@ -1,7 +1,7 @@
 {{#paper-item class="payee-list-item md-2-line"}}
-  <img src={{payee.image}} alt={{payee.name}} class="md-avatar payee-list-item-avatar">
+  <img src={{model.image}} alt={{payee.name}} class="md-avatar payee-list-item-avatar">
   <div class="md-list-item-text payee-list-item-text ">
-    <LinkTo @route="payees.payee" @model={{payee}}>
+    <LinkTo @route="payees.show" @model={{payee}}>
       <h3 class="payee-list-item-text-name">{{payee.name}}</h3>
     </LinkTo>
     <p class="payee-list-item-text-website">{{payee.website}}</p>

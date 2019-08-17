@@ -11,3 +11,5 @@ export default Model.extend({
   spend: DS.attr('number'), // How much money has been spent with payee
   //TODO: Notes database table
 });
+
+// https://davidtang.io/2019/08/02/handling-foreign-key-attributes-in-an-api-with-ember-data.html

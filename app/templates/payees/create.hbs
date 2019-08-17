@@ -1,0 +1,73 @@
+{{page-toolbar pageTitle="NEW PAYEE"}}
+
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div id="payee" class="doc-content layout-row layout-xs-column layout-align-center">
+    <div class="layout-column flex-xs flex-gt-sm-70">
+
+      {{#paper-card as |card|}}
+
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}Create Payee{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+        {{#card.content}}
+
+          <div class="layout-column flex">
+            {{paper-input class="flex-100" type="text" label="Payee Name" placeholder="Enter Payee Name" value=this.name onChange=(action (mut this.name)) }}
+
+            {{paper-input class="flex-100" type="text" label="Payee Image" placeholder="Enter Payee Image" value=this.image onChange=(action (mut this.image)) }}
+
+            {{paper-input class="flex-100" type="text" label="Payee Website" placeholder="Enter Payee Website" value=this.website onChange=(action (mut this.website))}}
+
+            {{paper-input class="flex-100" textarea=true label="Payee Description" placeholder="Enter Payee Description" value=this.description onChange=(action (mut this.description)) block=true maxlength=300 passThru=(hash rows=7 maxRows=7)}}
+          </div>
+
+        {{/card.content}}
+
+        {{#card.actions}}
+          {{#paper-button raised=true primary=true onClick=(action "createPayee")}}CREATE{{/paper-button}}
+        {{/card.actions}}
+
+      {{/paper-card}}
+
+
+      {{!-- {{#paper-card as |card|}}
+
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}Payee Details{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+
+        {{#card.content}}
+
+
+          {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}}
+
+
+
+            <div class="layout-column flex">
+
+              {{form.input class="flex-100" type="text" label="Payee Name" value=payeeName onChange=(action (mut payeeName)) required=true}}
+
+              {{form.input class="flex-100" type="text" label="Payee Image" value=payeeImage onChange=(action (mut payeeImage)) required=true}}
+
+              {{form.input class="flex-100" type="text" label="Payee Website" value=payeeWebsite onChange=(action (mut payeeWebsite)) required=true}}
+
+              {{form.input class="flex-100" textarea=true label="Payee Description" placeholder="Enter Payee Description" value=payeeDescription onChange=(action (mut payeeDescription)) required=true block=true maxlength=300 passThru=(hash rows=7 maxRows=7)}}
+
+            </div>
+
+          {{/paper-form}}
+        {{/card.content}}
+
+        {{#card.actions}}
+          {{#form.submit-button raised=true primary=true}}Save{{/form.submit-button}}
+        {{/card.actions}}
+
+      {{/paper-card}} --}}
+
+    </div>
+  </div>
+{{/paper-content}}
