@@ -16,6 +16,24 @@
 
     {{!-- Right Toolbar Buttons --}}
     <span class="flex"></span>
+    {{!-- {{#paper-menu isOpen=menuFourIsOpen position="target-right target" as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button onClick=null iconButton=true}}
+          {{paper-icon "more_vert" class="md-menu-origin"}}
+        {{/paper-button}}
+      {{/menu.trigger}}
+
+      {{#menu.content width=2 as |content|}}
+        {{#content.menu-item onClick=(action "delete")}}
+          <span class="md-menu-align-target">Delete</span> {{item}}
+        {{/content.menu-item}}
+        {{#content.menu-item onClick=(action "merge")}}
+          <span class="md-menu-align-target">Merge</span> {{item}}
+        {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}} --}}
+
+
     {{#if createRoute}}
       {{#paper-button href=createRoute}}
         Create

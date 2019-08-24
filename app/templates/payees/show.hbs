@@ -1,4 +1,4 @@
-{{page-toolbar pageTitle=this.model.name}}
+<PageToolbar @pageTitle={{this.model.name}} @model={{model}} />
 
 {{#paper-content scroll-y=true class="layout-padding flex"}}
   <div id="payee" class="doc-content layout-row layout-xs-column layout-align-center">
@@ -10,7 +10,10 @@
 
         {{#card.title as |title|}}
           {{#title.text as |text|}}
-            {{#text.headline}}Payee {{this.model.number}}{{/text.headline}}
+            <span>
+              {{#text.headline}}Payee {{this.model.number}}{{/text.headline}}
+            </span>
+
           {{/title.text}}
         {{/card.title}}
         {{#card.content}}

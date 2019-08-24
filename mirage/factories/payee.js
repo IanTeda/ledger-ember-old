@@ -17,6 +17,6 @@ export default Factory.extend({
   website() { return faker.internet.url(); },
   description() { return faker.lorem.paragraph(); },
   transactions() { return faker.random.number(8, 3432); },
-  spend() { return faker.finance.amount(10, 100000, null, 0); }
+  spend() { return faker.finance.amount(10, 100000, null, 0); },
 
 });
