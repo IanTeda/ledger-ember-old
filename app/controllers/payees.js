@@ -5,12 +5,24 @@
  */
 
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+
 
 export default Controller.extend({
 
-  // Alias the model so templates are easier to read
-  // payees: alias('model'),
+  /**
+   * INJECT PAPER TOAST SERVICE
+   * Don't forget to 'import { inject as service } from '@ember/service';'
+   * 
+   * https://miguelcobain.github.io/ember-paper/#/components/toast
+   * https://github.com/miguelcobain/ember-paper/blob/master/tests/dummy/app/controllers/demo/toast.js
+   */
+  paperToaster: service(),
 
+  /**
+   * CONTROLLER ACTIONS
+   * What do we need to do between the view and model or between the model and view
+   */
   actions: {
 
     /**
@@ -37,7 +49,7 @@ export default Controller.extend({
       newPayee.save()
         // Then transition to new payee URL
         .then((payee) => {
-          this.transitionToRoute("payees.show", payee.id) // TODO: Check out Ghost code for slug service
+          this._transitionToPayee(payee) 
        })
     },
 
@@ -53,7 +65,9 @@ export default Controller.extend({
      */
     updatePayee(payee){
       // Save DS model record to API backend
-      payee.save();
+      payee.save()
+        // Then celebrate with a toast message
+        .then(this._openToast('"' + payee.name +'"' + ' details updated')); //TODO: Do I wait for API confirmation?
     },
 
     /**
@@ -73,6 +87,33 @@ export default Controller.extend({
     mergePayee(){
       alert('Merge Payee')
     }
+  },
+
+  /**
+   * TRANSITION TO PAYEE (Private Function)
+   * Confirm payee created then transition to payee URL
+   * 
+   * @param {DS RECORD} payee 
+   */
+  _transitionToPayee(payee) {
+    // Celebrate with a toast message
+    this._openToast('"' + payee.name +'"' + ' created');
+
+    // Transition to new payee URL
+    this.transitionToRoute("payees.show", payee.id) // TODO: Check out Ghost code for slug service
+  },
+
+  /**
+   * OPEN TOAST (Private Function)
+   * Show toast message
+   * 
+   * @param {STRING} message 
+   */
+  _openToast(message) {
+    this.get('paperToaster').show(message, {
+      duration: 4000,
+      toastClass: this.get('toastClass')
+    });
   },
 
 });
