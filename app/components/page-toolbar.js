@@ -1,12 +1,39 @@
 import Component from '@ember/component';
+import { A } from '@ember/array';
 
 export default Component.extend({
 
   actions: {
-    create() {
-      alert('Create Toolbar');
+    userProfile() {
+      alert('User Profile');
     },
-  }
+
+    settings(){
+      alert('Settings')
+    },
+
+    logOut() {
+      alert('Log Out')
+    }
+  },
+
+  toolbarMenu: A([
+    {
+      title: 'Profile',
+      action: 'userProfile',
+      isFirst: true
+    },
+    {
+      title: 'Settings',
+      action: 'settings'
+    },
+
+    {
+      title: 'Log Out',
+      action: 'logOut'
+    }
+  ]),
+
 
 });
 

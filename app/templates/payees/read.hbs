@@ -1,0 +1,13 @@
+<PageToolbar @pageTitle={{this.model.name}} />
+
+{{#paper-content scroll-y=true class="layout-padding flex"}}
+  <div id="payee" class="doc-content layout-row layout-xs-column layout-align-center">
+    <div class="layout-column flex-xs flex-gt-sm-70">
+
+      {{payee-detail payee=this.model update=(action "updatePayee") merge=(action "mergePayee") delete=(action "deletePayee")}}
+
+      {{payee-stats payee=this.model}}
+
+    </div>
+  </div>
+{{/paper-content}}

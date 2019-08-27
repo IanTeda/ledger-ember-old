@@ -7,7 +7,6 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 
-
 export default Controller.extend({
 
   /**
@@ -49,13 +48,15 @@ export default Controller.extend({
       newPayee.save()
         // Then transition to new payee URL
         .then((payee) => {
-          this._transitionToPayee(payee) 
+          this._transitionToPayeeRead(payee) 
        })
     },
 
+    
     readPayee(){
       alert('Read Payee')
     },
+
 
     /**
      * UPDATE PAYEE
@@ -70,6 +71,7 @@ export default Controller.extend({
         .then(this._openToast('"' + payee.name +'"' + ' details updated')); //TODO: Do I wait for API confirmation?
     },
 
+
     /**
      * DELETE PAYEE
      * Delete payee record from API backend
@@ -77,17 +79,24 @@ export default Controller.extend({
      * @param {model} payee 
      */
     deletePayee(payee){
+      // What payee are we deleting
+      let payeeName = payee.name;
+
       // Delete payee record from DS
       payee.deleteRecord();
+      
       // Save change to API backend i.e. delete record
-      payee.save();
+      payee.save()
+        .then(this._transitionToPayeesIndex(payeeName));
     },
 
     
     mergePayee(){
+      // TODO: Merge payee logic
       alert('Merge Payee')
     }
   },
+
 
   /**
    * TRANSITION TO PAYEE (Private Function)
@@ -95,13 +104,28 @@ export default Controller.extend({
    * 
    * @param {DS RECORD} payee 
    */
-  _transitionToPayee(payee) {
+  _transitionToPayeeRead(payee) {
     // Celebrate with a toast message
     this._openToast('"' + payee.name +'"' + ' created');
 
     // Transition to new payee URL
-    this.transitionToRoute("payees.show", payee.id) // TODO: Check out Ghost code for slug service
+    this.transitionToRoute("payees.read", payee.id); // TODO: Check out Ghost code for slug service
   },
+
+
+  /**
+   * TRANSITION TO PAYEE INDEX
+   * Transition to the payee index after deleting payee
+   * @param {STRING} payeeName 
+   */
+  _transitionToPayeesIndex(payeeName){
+    // Celebrate with a toast message
+    this._openToast('"' + payeeName +'"' + ' has been deleted');
+
+    // Transition to Payees Index
+    this.transitionToRoute("payees");
+  },
+
 
   /**
    * OPEN TOAST (Private Function)

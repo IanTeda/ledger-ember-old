@@ -1,0 +1,21 @@
+{{#paper-card as |card|}}
+
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Key Statistics{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+
+    <div class="layout-column flex">
+      <div class="flex-100">
+        <b>Total Spend:</b> {{payee.spend}}
+      </div>
+      <div class="flex-100">
+        <b>Transactions:</b> {{payee.transactions}}
+      </div>
+    </div>
+
+  {{/card.content}}
+{{/paper-card}}
+{{yield}}

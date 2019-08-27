@@ -6,7 +6,7 @@
     {{#paper-list}}
 
       {{#each this.model as |payee|}}
-        <LinkTo @route="payees.show" @model={{payee}}>
+        <LinkTo @route="payees.read" @model={{payee}}>
           <h4>{{payee.name}}</h4>
         </LinkTo>
       {{/each}}

@@ -15,10 +15,10 @@ Router.map(function() {
   this.route('settings');
   this.route('budgets');
   this.route('payees', function() {
-    // Show a Payee
-    this.route('show', { path: '/:payee_id' });
     // Create a Payee
     this.route('create');
+    // Read a payee
+    this.route('read', { path: '/:payee_id' });
   });
 
 

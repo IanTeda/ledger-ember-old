@@ -63,3 +63,4 @@ Specify what it takes to deploy your app.
 [Global CRUD](https://stackoverflow.com/questions/26979623/global-crud-ember-js)
 [The simplest possible Ember Data CRUD Tutorial](https://medium.com/ember-ish/the-simplest-possible-ember-data-crud-16eacee33ae6)
 [Open Source Ember Apps](https://github.com/EmberSherpa/open-source-ember-apps)
+[Ember Paper Dummy App](https://github.com/miguelcobain/ember-paper/blob/master/tests/dummy/)

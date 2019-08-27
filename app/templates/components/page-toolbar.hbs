@@ -16,22 +16,26 @@
 
     {{!-- Right Toolbar Buttons --}}
     <span class="flex"></span>
-    {{!-- {{#paper-menu isOpen=menuFourIsOpen position="target-right target" as |menu|}}
-      {{#menu.trigger}}
-        {{#paper-button onClick=null iconButton=true}}
-          {{paper-icon "more_vert" class="md-menu-origin"}}
-        {{/paper-button}}
-      {{/menu.trigger}}
+    {{#if toolbarMenu}}
+      {{#paper-menu isOpen=toolbarMenuIsOpen position="target-right target" as |menu|}}
 
-      {{#menu.content width=2 as |content|}}
-        {{#content.menu-item onClick=(action "delete")}}
-          <span class="md-menu-align-target">Delete</span> {{item}}
-        {{/content.menu-item}}
-        {{#content.menu-item onClick=(action "merge")}}
-          <span class="md-menu-align-target">Merge</span> {{item}}
-        {{/content.menu-item}}
-      {{/menu.content}}
-    {{/paper-menu}} --}}
+        {{!-- Menu Button Trigger --}}
+        {{#menu.trigger}}
+          {{#paper-button onClick=null iconButton=true}}
+            {{paper-icon "more_vert" class="md-menu-origin"}}
+          {{/paper-button}}
+        {{/menu.trigger}}
+
+        {{!-- Menu --}}
+        {{#menu.content width=2 as |content|}}
+          {{#each toolbarMenu as |item|}}
+            {{#content.menu-item onClick=(action item.action)}}
+              <span class="md-menu-align-target">{{item.title}}</span>
+            {{/content.menu-item}}
+          {{/each}}
+        {{/menu.content}}
+      {{/paper-menu}}
+    {{/if}}
 
 
     {{#if createRoute}}
