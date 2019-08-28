@@ -26,7 +26,6 @@
           {{/paper-menu}}
         </div>
       </div>
-
     {{/title.text}}
   {{/card.title}}
 
@@ -51,4 +50,9 @@
   {{/card.actions}}
 
 {{/paper-card}}
+
+{{#if confirmDeleteDialog}}
+  {{dialog-confirm-delete name=payee.name message="Please confirm deletion of payee" delete=(action "deletePayee")}}
+{{/if}}
+
 {{yield}}

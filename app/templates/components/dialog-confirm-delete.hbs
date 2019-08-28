@@ -1,0 +1,19 @@
+{{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+  {{#paper-toolbar warn=true}}
+    {{#paper-toolbar-tools}}
+      <h2>CONFIRM DELETION - {{name}}</h2>
+      <span class="flex"></span>
+      {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
+
+  {{#paper-dialog-content}}
+    <p>{{message}} "{{name}}"</p>
+  {{/paper-dialog-content}}
+
+  {{#paper-dialog-actions class="layout-row"}}
+    <span class="flex"></span>
+    {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+    {{#paper-button warn=true onClick=(action "closeDialog" "delete")}}DELETE{{/paper-button}}
+  {{/paper-dialog-actions}}
+{{/paper-dialog}}

@@ -22,6 +22,10 @@ export default Component.extend({
     deletePayee(){
       this.delete()
     },
+    confirmDeletePayee(event) {
+      this.set('dialogOrigin', event.currentTarget);
+      this.set('confirmDeleteDialog', true);
+    },
   },
 
   menuItems: A([
@@ -31,7 +35,7 @@ export default Component.extend({
     },
     {
       title: 'Delete',
-      action: 'deletePayee'
+      action: 'confirmDeletePayee'
     }
   ]),
 
