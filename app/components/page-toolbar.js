@@ -14,7 +14,11 @@ export default Component.extend({
 
     logOut() {
       alert('Log Out')
+    },
+    toggle(propName) {
+      this.toggleProperty(propName);
     }
+
   },
 
   toolbarMenu: A([

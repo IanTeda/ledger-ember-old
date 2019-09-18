@@ -2,11 +2,13 @@
 
 {{#paper-content scroll-y=true class="layout-padding flex"}}
   <div id="payee" class="doc-content layout-row layout-xs-column layout-align-center">
-    <div class="layout-column flex-xs flex-gt-sm-70">
+    <div class="layout-column flex flex-gt-md-70 flex-gt-lg-50">
 
       {{payee-detail payee=this.model update=(action "updatePayee") merge=(action "mergePayee") delete=(action "deletePayee")}}
 
       {{payee-stats payee=this.model}}
+
+      {{payee-aliases payee=this.model}}
 
     </div>
   </div>

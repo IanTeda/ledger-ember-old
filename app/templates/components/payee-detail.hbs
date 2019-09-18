@@ -1,7 +1,7 @@
 {{#paper-card class="payee-detail" as |card|}}
 
   {{!-- Card Image --}}
-  {{card.image src=payee.image alt=payee.name title=payee.name}}
+  {{card.image class="payee-image" src=payee.image alt=payee.name title=payee.name}}
 
   {{!-- Card Title with Menu --}}
   {{#card.title as |title|}}
@@ -33,13 +33,13 @@
   {{#card.content}}
 
     <div class="layout-column flex">
-      {{paper-input class="flex-100" type="text" label="Payee Name" placeholder="Enter Payee Name" value=payee.name onChange=(action (mut payee.name)) }}
+      {{paper-input class="flex-100 payee-name" type="text" label="Payee Name" placeholder="Enter Payee Name" value=payee.name onChange=(action (mut payee.name)) }}
 
-      {{paper-input class="flex-100" type="text" label="Payee Image" placeholder="Enter Payee Image" value=payee.image onChange=(action (mut payee.image)) }}
+      {{paper-input class="flex-100 payee-image" type="text" label="Payee Image" placeholder="Enter Payee Image" value=payee.image onChange=(action (mut payee.image)) }}
 
-      {{paper-input class="flex-100" type="text" label="Payee Website" placeholder="Enter Payee Website" value=payee.website onChange=(action (mut payee.website))}}
+      {{paper-input class="flex-100 payee-website" type="text" label="Payee Website" placeholder="Enter Payee Website" value=payee.website onChange=(action (mut payee.website))}}
 
-      {{paper-input class="flex-100" textarea=true label="Payee Description" placeholder="Enter Payee Description" value=payee.description onChange=(action (mut payee.description)) block=true maxlength=300 passThru=(hash rows=7 maxRows=7)}}
+      {{paper-input class="flex-100 payee-description" textarea=true label="Payee Description" placeholder="Enter Payee Description" value=payee.description onChange=(action (mut payee.description)) block=true maxlength=300 passThru=(hash rows=7 maxRows=7)}}
     </div>
 
   {{/card.content}}

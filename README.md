@@ -64,3 +64,4 @@ Specify what it takes to deploy your app.
 [The simplest possible Ember Data CRUD Tutorial](https://medium.com/ember-ish/the-simplest-possible-ember-data-crud-16eacee33ae6)
 [Open Source Ember Apps](https://github.com/EmberSherpa/open-source-ember-apps)
 [Ember Paper Dummy App](https://github.com/miguelcobain/ember-paper/blob/master/tests/dummy/)
+[Mocking a Blog Backend with Mirage and JSON API](https://emberigniter.com/mock-json-api-backend-with-mirage/)

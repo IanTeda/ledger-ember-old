@@ -22,4 +22,5 @@ export default function() {
    * delete   | this.del('/payees/:id')
    */
   this.resource('payees');
+  this.resource('aliases')
 }

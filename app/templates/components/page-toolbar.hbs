@@ -15,9 +15,16 @@
     </h2>
 
     {{!-- Right Toolbar Buttons --}}
-    <span class="flex"></span>
+    <span class="flex"></span> {{!-- I push everything to the end --}}
     {{#if toolbarMenu}}
       {{#paper-menu isOpen=toolbarMenuIsOpen position="target-right target" as |menu|}}
+
+        {{!-- Create New Record --}}
+        {{#if createRoute}}
+          {{#paper-button href=createRoute}}
+            Create
+          {{/paper-button}}
+        {{/if}}
 
         {{!-- Menu Button Trigger --}}
         {{#menu.trigger}}
@@ -35,13 +42,6 @@
           {{/each}}
         {{/menu.content}}
       {{/paper-menu}}
-    {{/if}}
-
-
-    {{#if createRoute}}
-      {{#paper-button href=createRoute}}
-        Create
-      {{/paper-button}}
     {{/if}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}

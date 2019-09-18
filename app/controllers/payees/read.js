@@ -1,5 +1,10 @@
+/**
+ * READ PAYEE
+ * CRUD updates done in payees controller.
+ * Point actions back to payees controller
+ */
 import Controller from '@ember/controller';
-import { inject } from '@ember/controller';
+import {inject} from '@ember/controller';
 
 export default Controller.extend({
 
@@ -8,19 +13,22 @@ export default Controller.extend({
 
     actions: {
       createPayee(){
+        // Create action in payees controller
         this.get('payees').send('createPayee');
       },
 
       updatePayee(){
-        // Send action to Payees Controller
+        // Update action in payees controller
         this.get('payees').send('updatePayee', this.model);
       },
       
       mergePayee(){
+        // Merge payee action in payees controller
         this.get('payees').send('mergePayee');
       },
 
       deletePayee() {
+        // Delete payee action in payees controller
         this.get('payees').send('deletePayee', this.model);
       }
     },

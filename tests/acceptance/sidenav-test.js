@@ -10,10 +10,16 @@ module("Acceptance | sidenav", function(hooks) {
     assert.equal(currentURL(), "/dashboard", "should redirect automatically");
   });
 
+  test("branding sidebar link should link to /dashboard.", async function (assert) {
+    await visit("/");
+    await click(".sidenav-link-branding");
+    assert.equal(currentURL(), "/dashboard", "should navigate to /dashboard");
+  });
+
   test("dashboard menu link should link to /dashboard.", async function (assert) {
     await visit("/");
     await click("md-list-item.sidenav-link-dashboard a");
-    assert.equal(currentURL(), "/dashboard", "should navigate to /ledger");
+    assert.equal(currentURL(), "/dashboard", "should navigate to /dashboard");
   });
 
   test("ledger menu link should link to /ledger.", async function (assert) {

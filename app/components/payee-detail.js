@@ -14,15 +14,15 @@ export default Component.extend({
     // Action defined in component template
     updatePayee(){
       // Action defined in component call (parent)
-      this.update()
+      this.update();
     },
     mergePayee(){
-      this.merge()
+      this.merge();
     },
     deletePayee(){
-      this.delete()
+      this.delete();
     },
-    confirmDeletePayee(event) {
+    confirmDeleteDialog(event) {
       this.set('dialogOrigin', event.currentTarget);
       this.set('confirmDeleteDialog', true);
     },
@@ -35,7 +35,7 @@ export default Component.extend({
     },
     {
       title: 'Delete',
-      action: 'confirmDeletePayee'
+      action: 'confirmDeleteDialog'
     }
   ]),
 

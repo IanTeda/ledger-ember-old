@@ -1,0 +1,20 @@
+{{#paper-card as |card|}}
+
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Payee Aliases{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+
+    <div class="layout-column flex">
+      {{#each payee.aliases as |alias|}}
+        <div class="flex-100">
+          {{alias.name}}
+        </div>
+      {{/each}}
+    </div>
+
+  {{/card.content}}
+{{/paper-card}}
+{{yield}}

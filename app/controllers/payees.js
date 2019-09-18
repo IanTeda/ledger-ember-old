@@ -41,7 +41,6 @@ export default Controller.extend({
         image: image,
         website: website,
         description: description 
-
       })
 
       // Save DS record to API backend
@@ -53,8 +52,8 @@ export default Controller.extend({
     },
 
     
-    readPayee(){
-      alert('Read Payee')
+    readPayee(payee){
+      this.transitionToRoute('payees.read', payee.get('firstObject'));
     },
 
 
@@ -110,6 +109,7 @@ export default Controller.extend({
 
     // Transition to new payee URL
     this.transitionToRoute("payees.read", payee.id); // TODO: Check out Ghost code for slug service
+    // this.transitionToRoute('payees.read', payee.get('firstObject'));
   },
 
 

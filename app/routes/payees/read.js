@@ -8,6 +8,6 @@ export default Route.extend({
    * Return model for payee with id
    */
   model(params) {
-    return this.store.findRecord('payee', params.payee_id);
+    return this.store.findRecord('payee', params.payee_id, { include: 'aliases' });
   },
 });

@@ -9,6 +9,7 @@ export default Model.extend({
   transactions: DS.attr('number'), // How many ledger transactions associated with payee
   description: DS.attr('string'), // What is the Payee about
   spend: DS.attr('number'), // How much money has been spent with payee
+  aliases: DS.hasMany('alias'),
   //TODO: Notes database table
 });
 
